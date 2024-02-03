@@ -23,14 +23,15 @@ if getenv("SLACK_WEBHOOK_URL") != "":
 
 
 def check_answer(answer: str | None) -> bool:
-    return answer is not None and answer.strip().upper() == "I AGREE"
+    return answer is not None and (
+        answer.strip().upper() == "I AGREE TO THE TOS" or answer.strip().upper() == "I AGREE TO THE TERMS OF SERVICE")
 
 
 def fetch_registrations():
     registrations = []
     for i in range(1, 5):
         print("Fetching page " + str(i))
-        registration = lemmy.list_registration_applications(page=i, unread_only="true")
+        registration = lemmy.list_registration_applications(page=i, unread_only=True)
         registrations = registrations + registration.json()["registration_applications"]
         time.sleep(2)
 
