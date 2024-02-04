@@ -1020,18 +1020,17 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4.3)", "pytest-
 
 [[package]]
 name = "plemmy"
-version = "0.4.1"
+version = "0.3.11"
 description = "A Python package for accessing the LemmyHttp API"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "plemmy-0.4.1-py3-none-any.whl", hash = "sha256:b7b0064228691956e2746f21ddf5b7bf1e91892be57e55399e1f8d5e4331fd8f"},
-    {file = "plemmy-0.4.1.tar.gz", hash = "sha256:481ada6ce17154935981cd1fe3bd4244f36a21b217b3c32ec8af96f9b05f7825"},
+    {file = "plemmy-0.3.11-py3-none-any.whl", hash = "sha256:2a58ac720d591257c2063d46201ec491e4f79f4061723b00ccbfbc41abc78bdd"},
+    {file = "plemmy-0.3.11.tar.gz", hash = "sha256:16cd4f9c1f2d707537840e0362f263ae6afead65a650c1ffc23e0a84610867a7"},
 ]
 
 [package.dependencies]
 requests = "2.31.0"
-typing-extensions = "4.9.0"
 
 [[package]]
 name = "pluggy"
@@ -1695,4 +1694,4 @@ requests = ">=2.0,<3.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7999e7c78f4e4b3f2ea3f87a1741fe396fbbcafbb0578c4c451e93cd104ad28a"
+content-hash = "961b6fb50ea019b89470eb86779fb279eeb033ed9514805810a491c1ebcf3b96"
