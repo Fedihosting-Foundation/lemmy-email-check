@@ -10,7 +10,7 @@ packages = [{include = "emailchecker"}]
 python = "^3.10"
 slack-sdk = "*"
 python-dotenv = "*"
-plemmy = "0.3.11"
+plemmy = "0.4.1"
 requests = "*"
 postgres = "*"
 
