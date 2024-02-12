@@ -23,7 +23,8 @@ if getenv("SLACK_WEBHOOK_URL") != "":
 
 
 def check_answer(answer: str | None) -> bool:
-    return answer is not None and answer.strip().upper() == "I AGREE"
+    return answer is not None and (
+        answer.strip().upper() == "I AGREE TO THE TOS" or answer.strip().upper() == "I AGREE TO THE TERMS OF SERVICE")
 
 
 def fetch_registrations():
