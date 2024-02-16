@@ -51,7 +51,8 @@ def main():
                   )
             for registration in registrations:
                 try:
-                    if "admin" in registration or registration["creator_local_user"] is None or "email" not in registration["creator_local_user"]:
+                    if "admin" in registration or registration["creator_local_user"] is None or "email" not in \
+                        registration["creator_local_user"]:
                         continue
                     local_user = registration["creator_local_user"]
 

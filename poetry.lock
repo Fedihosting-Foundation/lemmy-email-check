@@ -662,6 +662,24 @@ files = [
 six = ">=1.13,<2.0"
 
 [[package]]
+name = "lemmylib"
+version = "0.0.5"
+description = ""
+optional = false
+python-versions = "^3.10"
+files = []
+develop = false
+
+[package.dependencies]
+requests = "^2.31.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/LemmyWorld/lemmy-lib.git"
+reference = "v0.0.12"
+resolved_reference = "8c77e3c19c71cd86f8f46629b66e5be5e111ece7"
+
+[[package]]
 name = "luhn"
 version = "0.2.0"
 description = "Generate and verify Luhn check digits"
@@ -1694,4 +1712,4 @@ requests = ">=2.0,<3.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "961b6fb50ea019b89470eb86779fb279eeb033ed9514805810a491c1ebcf3b96"
+content-hash = "fe02d0b26a55845d0923073580b720a7933c686ac07f89993463ad7d28b24e3b"
