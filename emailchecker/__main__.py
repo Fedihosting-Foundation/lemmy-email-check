@@ -158,3 +158,7 @@ def main():
 
         print(f"Waiting for {config.get('SEARCH_DELAY_SECONDS', 60)} Seconds...")
         time.sleep(int(config.get("SEARCH_DELAY_SECONDS", 60)))
+
+
+if __name__ == "__main__":
+    main()
