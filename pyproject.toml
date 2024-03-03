@@ -12,7 +12,7 @@ slack-sdk = "*"
 python-dotenv = "*"
 requests = "*"
 psycopg2-binary = "^2.9.9"
-lemmylib = {git = "git@github.com:Fedihosting-Foundation/lemmy-lib.git", rev = "v0.0.13"}
+lemmylib = {git = "https://github.com/Fedihosting-Foundation/lemmy-lib.git", rev = "v0.0.13"}
 
 [tool.poetry.scripts]
 lemmyemailchecker = "emailchecker.__main__:main"
