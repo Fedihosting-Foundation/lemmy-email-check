@@ -3,5 +3,5 @@ services:
   app:
     env_file: .env
     image: ghcr.io/lemmyworld/lemmy-email-check:main
-    entrypoint: [ "python3", "emailchecker/__main__.py" ]
+    entrypoint: [ "python3", "__main__.py" ]
 
