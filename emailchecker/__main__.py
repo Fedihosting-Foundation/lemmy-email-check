@@ -83,15 +83,15 @@ def fetch_registrations():
                 registrations.append({
                     "registration_application": {
                         "id": row[0],
-                        "answer": row[3]
+                        "answer": str(row[3])
                     },
                     "creator_local_user": {
                         "id": row[1],
-                        "email": row[2],
+                        "email": str(row[2]),
                     },
                     "creator": {
                         "id": row[4],
-                        "name": row[5]
+                        "name": str(row[5])
                     }
                 })
     return registrations
