@@ -97,6 +97,14 @@ def fetch_registrations():
     return registrations
 
 
+def purge_user(user_id: int):
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute(f"DELETE FROM {config.get('PERSON_TABLE')} WHERE id = %s", (user_id,))
+            conn.commit()
+            return
+
+
 def main():
     global disposable_emails
     fetchLists.run()
@@ -127,7 +135,7 @@ def main():
                         lemmy.approve_registration_application(registration["registration_application"]["id"],
                                                                approve=False)
 
-                        lemmy.purge_person(user["id"], "Did not agree to the terms of service.")
+                        purge_user(user["id"])
                         if webhook:
                             webhook.send(
                                 text=f"User {user['name']} got blocked for not agreeing to the terms of service.")
