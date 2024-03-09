@@ -148,7 +148,7 @@ def main():
                         if getenv("DENY_TRASH_MAILS") == "true":
                             lemmy.approve_registration_application(registration["registration_application"]["id"],
                                                                    False)
-                            lemmy.purge_person(user["id"], "Used a trash mail.")
+                            purge_user(user["id"])
 
                         if webhook:
                             webhook.send(text=f"User {user['name']} got blocked for using a disposable email address")
