@@ -135,8 +135,8 @@ def main():
                         lemmy.approve_registration_application(registration["registration_application"]["id"],
                                                                approve=False)
 
-                        # purge_user(user["id"])
-                        lemmy.purge_person(user["id"], "User did not agree to the terms of service.")
+                        purge_user(user["id"])
+                        # lemmy.purge_person(user["id"], "User did not agree to the terms of service.")
                         if webhook:
                             webhook.send(
                                 text=f"User {user['name']} got blocked for not agreeing to the terms of service.")
@@ -149,8 +149,8 @@ def main():
                         if getenv("DENY_TRASH_MAILS") == "true":
                             lemmy.approve_registration_application(registration["registration_application"]["id"],
                                                                    False)
-                            # purge_user(user["id"])
-                            lemmy.purge_person(user["id"], "User used a disposable email address.")
+                            purge_user(user["id"])
+                            # lemmy.purge_person(user["id"], "User used a disposable email address.")
 
                         if webhook:
                             webhook.send(text=f"User {user['name']} got blocked for using a disposable email address")
