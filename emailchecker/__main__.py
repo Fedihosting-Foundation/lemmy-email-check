@@ -40,32 +40,15 @@ if config.get("SLACK_WEBHOOK_URL", None) is not None and config.get("SLACK_WEBHO
 lemmy = LemmyLib(config.get("LEMMY_URL"))
 lemmy.login(config.get("LEMMY_USERNAME"), config.get("LEMMY_PASSWORD"))
 
-db: connection | None = None
-
-
-def check_connection():
-    global db
-    if db is None:
-        return False
-    try:
-        db.cursor().execute("SELECT 1")
-    except Exception as e:
-        return False
-    return True
-
 
 def get_connection():
-    global db
-    if check_connection():
-        return db
-    db = pg.connect(
+    return pg.connect(
         dbname=config['DB_NAME'],
         user=config['DB_USER'],
         password=config['DB_PASSWORD'],
         host=config['DB_HOST'],
         port=config['DB_PORT']
     )
-    return db
 
 
 def check_answer(answer: str | None) -> bool:
